@@ -9,8 +9,8 @@ type Memo struct {
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 	Sender      User
-	To          []User
-	ReadReceipt []User
+	To          []*User `gorm:"many2many:users_id;"`
+	ReadReceipt []*User
 	Note        []Note
 }
 
